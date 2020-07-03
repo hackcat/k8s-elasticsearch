@@ -125,6 +125,11 @@ $ kubectl logs es-q8q2v
 
 So we have a 3-node Elasticsearch cluster ready to handle more work.
 
+## Persistent data
+1. Create a StorageClass with nfs
+2. Create a PersistentVolumeClaim
+3. es-rc.yaml use the claim
+
 ## Access the service
 
 *Don't forget* that services in Kubernetes are only acessible from containers in the cluster. For different behavior you should [configure the creation of an external load-balancer](https://kubernetes.io/docs/concepts/services-networking/service/#type-loadbalancer). While it's supported within this example service descriptor, its usage is out of scope of this document, for now.
